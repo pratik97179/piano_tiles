@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:piano_clone/src/utils/random_rumber.dart';
 
+import 'package:piano_clone/src/utils/random_rumber.dart';
 import 'package:piano_clone/src/widgets/line_widget.dart';
 import 'package:piano_clone/src/widgets/tile_widget.dart';
 
@@ -36,7 +36,7 @@ class _GameScreenState extends State<GameScreen>
           builder: (context, _) {
             return Transform(
               transform: Matrix4.identity()
-                ..translate(0.0, _top * _ac.value, 0.0),
+                ..translate(0.0, _top * _ac.value, 0.0),  //tile movement along it's row
               child: Positioned(
                 top: _top,
                 left:
