@@ -27,7 +27,8 @@ class _GameScreenState extends State<GameScreen>
 
   @override
   Widget build(BuildContext context) {
-    double _top = MediaQuery.of(context).size.height;
+    final double _height = MediaQuery.of(context).size.height;
+
     return Stack(
       children: <Widget>[
         const LineWidget(),
@@ -36,9 +37,9 @@ class _GameScreenState extends State<GameScreen>
           builder: (context, _) {
             return Transform(
               transform: Matrix4.identity()
-                ..translate(0.0, _top * _ac.value, 0.0),  //tile movement along it's row
+                ..translate(0.0, _height * _ac.value, 0.0),  //tile movement along it's row
               child: Positioned(
-                top: _top,
+                top: _height,
                 left:
                     RandomNumber.get() * MediaQuery.of(context).size.width / 4,
                 child: const TileWidget(),
